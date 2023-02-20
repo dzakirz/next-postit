@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Signin from "@/components/Navbar/Signin";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Signin from "@/components/Navbar/Signin";
 import Signout from "@/components/Navbar/Signout";
 
 export default async function Navbar() {
@@ -12,7 +12,7 @@ export default async function Navbar() {
   return (
     <nav className="flex items-center justify-between py-8">
       <Link href="/">
-        <h1 className="text-lg font-bold">Send it.</h1>
+        <h1 className="text-xl font-bold">Post it.</h1>
       </Link>
       <ul className="flex justify-center gap-7">
         {!session?.user ? <Signin /> : <Signout image={session.user.image} />}
