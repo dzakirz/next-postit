@@ -4,7 +4,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Signin from "@/components/Navbar/Signin";
 import Signout from "@/components/Navbar/Signout";
 
-export default async function Navbar() {
+export default async function Navbar(){
   const session = await getServerSession(authOptions);
 
   console.log(session);
